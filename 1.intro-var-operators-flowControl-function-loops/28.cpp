@@ -14,22 +14,13 @@ void printEachNum(int n){
 	printEachNum(n/10);
 	cout<<r<<endl;
 }
-
 int main (){
 	int n=3234;
 	int i=0;
 	while (n>0){
 		cout<<n%10;
 		n=n/10;
-
-
-
 	}
-
-
-
-
 	// printEachNum(n);
-	
 	return 0;
 }
