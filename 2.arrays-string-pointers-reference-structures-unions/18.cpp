@@ -8,7 +8,12 @@ int main (){
 	
 
 	cout<<*(p+1)<<endl;
-	cout<<a[4];
+	cout<<a[4]<<endl;
+
+// this two are also correct but they are that much readable
+
+	cout<<*(a+1)<<endl;
+	cout<<p[4];
 
 
 	
