@@ -9,6 +9,7 @@ int main(){
 
 
 	int (*p2)[6]=&arr;
+	// it will point the array of size 6
 	cout<<**p2<<endl;
 	// double pointers are used to store the adress of an full array
 

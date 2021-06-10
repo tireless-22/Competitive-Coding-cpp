@@ -2,7 +2,7 @@
 using namespace std;
 
 // printing each digit in a number in a number using recursion
-// and printing each digit number in a number using recursion
+// and printing each digit IN REVERSE order  in a number using recursion
 
 void printEachNum(int n){
 	if (n==0){
