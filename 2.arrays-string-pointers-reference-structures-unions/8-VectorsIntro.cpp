@@ -22,13 +22,6 @@ int main (){
 		
 	}
 	display(vec1);
-
-
-
-
-
-
-	
 	
 	return 0;
 }
