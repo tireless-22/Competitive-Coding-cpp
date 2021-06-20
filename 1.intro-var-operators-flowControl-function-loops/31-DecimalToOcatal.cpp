@@ -2,7 +2,7 @@
 using namespace std;
 int main(){
 
-	int n=32;
+	int n=3233;
 	string temp;
 	string octt;
 	string oct;

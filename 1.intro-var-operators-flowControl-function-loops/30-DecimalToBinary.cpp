@@ -7,6 +7,7 @@ int main(){
 	string bin;
 	string temp;
 	string binn;
+	
 
 
 	while(n!=0){
