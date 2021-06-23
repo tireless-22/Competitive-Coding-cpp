@@ -21,7 +21,7 @@ int main (){
 	cout<<cls.y<<endl;
 
 
-	c
+	
 
 
 

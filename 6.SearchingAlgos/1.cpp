@@ -5,19 +5,20 @@ void bnSearch(int a[],int start,int end,int target){
 	if (start>end ){
 		cout<<"not here";
 		return;
-	}	
+	}
+	int mid=(start+end)/2;	
 	
-	if (target ==a[(start+end)/2]){
-		cout<<"element is here"<<(start+end)/2<<endl;
+	if (target ==a[mid]){
+		cout<<"element is here"<<mid/2<<endl;
 		return;
 	}
-	else if (target<a[(start+end)/2]){
-		end=(start+end)/2-1;
+	else if (target<a[mid]){
+		end=mid-1;
 		bnSearch(a,start,end,target);
 
 	}
 	else {
-		start=(start+end)/2+1;
+		start=mid+1;
 		bnSearch(a,start,end,target);
 
 	}
