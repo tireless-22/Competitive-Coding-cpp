@@ -1,9 +1,13 @@
 #include<iostream>
+#include <cstring>
 using namespace std;
+
+
 int main(){
-    cout << "hello";
+    int x=34;
+    cout<<(x++).size();
     
-    return 0;
+
 }
 
 

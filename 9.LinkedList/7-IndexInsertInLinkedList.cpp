@@ -32,10 +32,16 @@ Node *insertAtTheGivenPosition(Node *head,int pos, int x){
 
 	Node *curr=head;
 
-	// why we used for loop means we know how many times we have to go inorder to insert the node
+	// why we used for loop means we know how many times we have 
+	// to go inorder to insert the node
+	// we can do the same with the for but it increases complexity
+	
 
 	for (int i=0;i<pos-2;i++){
 		curr=curr->next;
+	}
+	if (curr==NULL){
+		return head;
 	}
 
 	temp->next=curr->next;		
