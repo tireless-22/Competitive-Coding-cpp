@@ -9,11 +9,8 @@ int main(){
 	for(int i=0;i<n;i++){
 		if(i<k){
 			res+=a[i];
-			curr_sum=res;
-			
+			curr_sum=res;	
 		}
-
-
 		else{
 		curr_sum=curr_sum +a[i]-a[i-k];
 		res=max(curr_sum,res);
