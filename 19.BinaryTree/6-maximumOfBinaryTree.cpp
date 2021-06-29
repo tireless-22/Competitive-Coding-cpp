@@ -14,14 +14,13 @@ struct Node{
 	}
 
 };
-
-int sizeOfBinarytree(Node *root){
+int maxInBinaryTree(Node *root){
 	if (root==NULL){
-		return 0;
+		return INT_MIN;
 	}
-	return 1+(sizeOfBinarytree(root->left)+sizeOfBinarytree(root->right));
-
+	return max(root->data,max(maxInBinaryTree(root->left),maxInBinaryTree(root->right)));
 }
+
 
 
 int main(){
@@ -36,7 +35,7 @@ int main(){
 	root->right->left=new Node(7);
 	root->right->right=new Node(8);
 	root->left->left->left=new Node(9);
-	cout<<sizeOfBinarytree(root);
+	cout<<maxInBinaryTree(root);
 
 
 	return 0;
