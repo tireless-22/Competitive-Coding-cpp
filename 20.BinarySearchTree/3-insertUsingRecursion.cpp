@@ -16,13 +16,21 @@ Node *insertUsingRecursion(Node *root,int data){
 		root=new Node(data);
 	}
 	else if(data<root->data){
+		// why this syntax ,when we are calling the function with any node the changes made at that node will not be reflected to this
+		// we have to make them to reflect here by taking a values into this funtion and returning the changes made there
 		root->left=insertUsingRecursion(root->left,data);
 	}
 	else{
 		root->right=insertUsingRecursion(root->right,data);	
 	}
 	return root;
+	// from here we are sending the changed root to the previous node
 }
+
+
+
+
+
 void inOrder(Node *head){
 	if(head!=NULL){
 
