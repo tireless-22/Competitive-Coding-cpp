@@ -1,6 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// forward_list is a implementation of singly linked list and 
+// list is implementaion of doubly lined list
+
+
 int main (){
 	forward_list<int > f;
 	f.assign({34,4435,4,646,5});

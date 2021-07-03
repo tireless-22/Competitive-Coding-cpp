@@ -25,7 +25,7 @@ int main(){
 	// remove will delete all the instances of a given element
 	f4.remove(53);
 
-	auto it=f1.insert_after(f1.begin (),324);
+	auto it=f1.insert_after(f1.begin(),324);
 	cout<<*it;
 	cout<<endl<<endl;
 
