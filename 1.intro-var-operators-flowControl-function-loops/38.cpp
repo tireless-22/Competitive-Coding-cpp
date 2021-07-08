@@ -2,14 +2,14 @@
 using namespace std;
 int main(){
 	
-	int n=0,ans=0,num=0,i=0,mainSum=0;
+	unsigned long long n=0,ans=0,num=0,i=0,mainSum=0;
 	cin>>n;
 	for (int k=0;k<n;k++){
 		cin>>num;
 		if(num<1){
     		continue;
 		}
-  		int mainSum=0;
+  		mainSum=0;
   		i=2;
 	  	while(true){
 		    if(num==1){

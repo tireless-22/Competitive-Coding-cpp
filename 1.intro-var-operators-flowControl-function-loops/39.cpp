@@ -2,20 +2,22 @@
 using namespace std;
 int main(){
 	unsigned long long n=0,num=0,i=0;
-	unsigned long long sum=0,finalSum=0;
+	unsigned long long sum=0,totalSum=0;
 	cin>>n;
 	for (int k=0;k<n;k++){
+		sum=0;
+		num=0;
 		cin>>num;
 		if (num<=0){
-				sum=0;	
-				cout<<0;
+			sum=0;	
 			}
 		else if(num==1){
-				sum=0;
-				cout<<sum;
+			
+			sum=1;
 		}
 		else{
 			if (num==2 or num==3){
+			
 				sum=num+1;
 			}
 			else{
@@ -35,7 +37,8 @@ int main(){
 					}
 					while(num%(i+2)==0){
 						sum+=num;
-						num+=num/i;
+						num=num/(i+2);
+						// cout<<num<<endl;
 					}
 					i+=6;
 				}
@@ -44,14 +47,11 @@ int main(){
 				}
 				else{
 					sum+=num;
-				}	
+				}
 			}
-
 		}
-
-
-	
-	}
-	
+		totalSum+=sum;
+	}	
+	cout<<totalSum;
 	return 0;
 }

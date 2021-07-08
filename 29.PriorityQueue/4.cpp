@@ -8,7 +8,5 @@ int main(){
 		p.pop();
 	}
 
-
-
 	return 0;
 }
