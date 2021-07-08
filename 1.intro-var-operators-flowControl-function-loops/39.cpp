@@ -38,7 +38,6 @@ int main(){
 					while(num%(i+2)==0){
 						sum+=num;
 						num=num/(i+2);
-						// cout<<num<<endl;
 					}
 					i+=6;
 				}
