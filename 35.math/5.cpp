@@ -8,14 +8,6 @@ int main(){
 
 
 	while (n--){
-		int N,C;
-		cin>>N>>C;
-		while(N--){
-
-
-
-			
-		}
 
 
 

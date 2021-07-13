@@ -22,6 +22,9 @@ int fibTopDown(int n,int a[]){
 
 
 int fibBottomUp(int n){
+	// time ==o(n)
+	// space ==o(n)
+
 	int fibBottom[100]={0};
 	fibBottom[1]=1;
 
@@ -34,6 +37,8 @@ int fibBottomUp(int n){
 
 
 int fibBottomUpOptimised(int n){
+	// time ==o(n)
+	// space ==o(1)
 	if (n==0 or n==1){
 		return n;
 	}
