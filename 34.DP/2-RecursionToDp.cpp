@@ -35,29 +35,22 @@ int fibBottomUp(int n){
 	return fibBottom[n];
 }
 
+   
+// 	int a=0;
+// 	int b=1;
+// 	int c;
 
-int fibBottomUpOptimised(int n){
-	// time ==o(n)
-	// space ==o(1)
-	if (n==0 or n==1){
-		return n;
-	}
+// 	for (int i=2;i<=n;i++){
+// 		c=a+b;
 
-	int a=0;
-	int b=1;
-	int c;
+// 		a=b;
+// 		b=c;
 
-	for (int i=2;i<=n;i++){
-		c=a+b;
-
-		a=b;
-		b=c;
-
-	}
-	return c;
+// 	}
+// 	return c;
 
 
-}
+// }
 
 
 int main(){
@@ -65,7 +58,7 @@ int main(){
 	int a[100]={0};
 	cout<<"fib top down approach  "<<fibTopDown(12,a)<<endl;
 	cout<<"fib bottom up approach  "<<fibBottomUp(5)<<endl;
-	cout<<"fib bottom up optimised"<<fibBottomUpOptimised(5)<<endl;
+	// cout<<"fib bottom up optimised"<<fibBottomUpOptimised(5)<<endl;
 
 	return 0;
 }
