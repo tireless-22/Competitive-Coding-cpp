@@ -1,28 +1,41 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
+    int n;
+    cin>>n;
+    string s;
 
-	int n=35;
+    for (int i=0;i<n;i++){
+        cin>>s;
+        int len=s.size();
+        int count=0;
+        char temp=s[0];
+        for (int i=1;i<len;i++){
+            if(s[i]!=temp){
+                temp=s[i];
 
-	string bin;
-	string temp;
-	string binn;
-	
+            }
+            else{
+                if(s[i]=='a'){
+                    temp='b';
+                }
+                else{
+                    temp='a';
+                }
+                count++;
+            }
+
+        }
+        cout<<count<<"\n";
+        
 
 
-	while(n!=0){
-		temp=n%2+48;
-		bin=bin+temp;
-		n=n/2;
-	}
-	
-	int len=bin.size();
-	
-	for (int i=len-1;i>=0;i--){
-		binn+=bin[i];
 
-	}
-	cout<<binn;
-	
-	return 0;
+
+    }
+
+
+
+
+    return 0;
 }

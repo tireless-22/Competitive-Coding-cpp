@@ -1,29 +1,12 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
+
+
 int main(){
+	map<int ,int >k;
+	k.insert(make_pair(23,43));
+	auto it=k.begin();
+	cout<<it->first;
 	
-	int n=0,ans=0,num=0,i=0,mainSum=0;
-	cin>>n;
-	for (int k=0;k<n;k++){
-		cin>>num;
-		if(num<1){
-    		continue;
-		}
-  		int mainSum=0;
-  		i=2;
-	  	while(true){
-		    if(num==1){
-			    mainSum+=1;
-			    break;
-			}
-		    while(num%i!=0){
-		      	i+=1; 
-		    }
-			mainSum+=num;
-	    	num=num/i; 
-	  	}
-	ans+=mainSum; 	
-	}
-cout<<ans;
 	return 0;
 }

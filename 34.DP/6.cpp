@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// by bottom up code for minimum steps to 1
+// given bottom up code for minimum steps to 1
 
 int minStepBottomUp(int v[],int n){
 	if (n==1){
@@ -39,8 +39,6 @@ int main(){
 	int n=9;
 
 	cout<<minStepBottomUp(v,n);
-
-
 
 	return 0;
 }

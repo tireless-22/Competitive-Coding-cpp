@@ -1,48 +1,58 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
+
+// activity selection using backtracing
+
+
+bool cmp(pair<int,int> a ,pair<int,int> b){
+
+	if(a.second==b.second){
+
+		return a.first<b.first;
+	}
+
+
+
+	return a.second<b.second;
+}
+
+
 int main(){
-	int n=0,num=0,i=0;
-	int sum=0;
-	num=345345346;
-	if (num<=0){
-			cout<<0<<endl;	
-		}
-	else if(num==1){
-		cout<<1<<endl;
+
+
+	int n,a,b;
+
+	vector<pair<int,int>> vp;
+
+	cin>>n;
+
+	for (int i=0;i<n;i++){
+		cin>>a;
+		cin>>b;
+		vp.push_back(make_pair(a,b));
+
 	}
-	else{
-		if (num==2 or num==3){
-			cout<<num+1;
-		}
-		else{
-			while(num%2==0){
-				sum+=num;
-				num=num/2;
-			}
-			while(num%3==0){
-				sum+=num;
-				num=num/3;
-			}
-			int i=5;
-			while(i*i<=num){
-				while(num%i==0){
-					sum+=num;
-					num=num/i;
-				}
-				while(num%(i+2)==0){
-					sum+=num;
-					num+=num/i;
-				}
-				i+=6;
-			}
-			if(num!=1){
-				sum+=num+1;
-			}
-			else{
-				sum+=num;
-			}
-			cout<<sum<<endl;
+	sort(vp.begin(),vp.end(),cmp);
+
+
+
+
+
+	for(int i=0;i<n;i++){
+
+		cout<<vp[i].first<<"    "<<vp[i].second<<endl;
+	}
+
+
+	int res=1;
+	int finishTimeOfPrevious=vp[0].second;
+	for (int i=1;i<n;i++){
+		if(vp[i].first>=finishTimeOfPrevious){
+			finishTimeOfPrevious=vp[i].second;
+			res++;
+
 		}
 	}
+	cout<<"res"<<"  "<<res;
 	return 0;
 }
