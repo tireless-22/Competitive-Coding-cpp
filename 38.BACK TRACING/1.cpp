@@ -1,57 +1,75 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-int main(){
-	unsigned long long n=0,num=0,i=0;
-	unsigned long long sum=0,finalSum=0;
-	cin>>n;
-	for (int k=0;k<n;k++){
-		cin>>num;
-		if (num<=0){
-				sum=0;	
-				cout<<0;
-			}
-		else if(num==1){
-				sum=0;
-				cout<<sum;
-		}
-		else{
-			if (num==2 or num==3){
-				sum=num+1;
-			}
-			else{
-				while(num%2==0){
-					sum+=num;
-					num=num/2;
-				}
-				while(num%3==0){
-					sum+=num;
-					num=num/3;
-				}
-				int i=5;
-				while(i*i<=num){
-					while(num%i==0){
-						sum+=num;
-						num=num/i;
-					}
-					while(num%(i+2)==0){
-						sum+=num;
-						num+=num/i;
-					}
-					i+=6;
-				}
-				if(num!=1){
-					sum+=num+1;
-				}
-				else{
-					sum+=num;
-				}	
-			}
 
+
+bool ratInMaze(char maze[10][10],int soln[10][10],int i,int j,int m,int n){
+
+	// base condition
+	if(i==m and j==n){
+		soln[i][j]=1;
+		for (int i=0;i<=m;i++){
+			for(int j=0;j<=n;j++){
+				cout<<soln[i][j]<<"  ";
+			}
+			cout<<endl;
 		}
+		cout<<endl<<endl;
+
+
+		return true;
+		// we will keep the parent caller as true,bcz any of the child must give a true
+
+	}
+
+
+	if(i>m or j>n){
+		return false;
+	}
+
+	if(maze[i][j]=='x'){
+		return false;
+	}
+	soln[i][j]=1;
+
+	bool rightSide=ratInMaze(maze,soln,i,j+1,m,n);
+	bool downSide=ratInMaze(maze,soln,i+1,j,m,n);
+	soln[i][j]=0;
 
 
 	
+
+	if(rightSide or downSide){
+		// we called for the 
+		return true;
+
 	}
 	
+
+
+	return false;
+}
+
+
+int main(){
+
+	char maze[10][10]={
+		"oooo",
+		"ooxo",
+		"ooox",
+		"oxoo",
+	};
+
+	int soln[10][10]={0};
+	int m=4;
+	int n=4;
+
+
+	bool res=ratInMaze(maze,soln,0,0,m-1,n-1);
+	cout<<res;
+
+
+
+
+
 	return 0;
 }

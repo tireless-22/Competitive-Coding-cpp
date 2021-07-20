@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 // largest size of subarray of of sum k
+// sliding window of varialble size
+
 int main(){
 	int arr[]={4,1,1,2,1,2,5 };
 	int size=sizeof(arr)/sizeof(arr[0]);
