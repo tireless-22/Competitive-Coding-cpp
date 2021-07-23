@@ -10,7 +10,7 @@ bool ratInMaze(char maze[10][10],int soln[10][10],int i,int j,int m,int n){
 		for (int i=0;i<=m;i++){
 			for(int j=0;j<=n;j++){
 				cout<<soln[i][j]<<"  ";
-			}
+			} 
 			cout<<endl;
 		}
 		cout<<endl<<endl;
@@ -36,40 +36,24 @@ bool ratInMaze(char maze[10][10],int soln[10][10],int i,int j,int m,int n){
 	soln[i][j]=0;
 
 
-	
 
 	if(rightSide or downSide){
 		// we called for the 
 		return true;
-
 	}
-	
-
-
 	return false;
 }
-
-
 int main(){
-
 	char maze[10][10]={
 		"oooo",
 		"ooxo",
 		"ooox",
 		"oxoo",
 	};
-
 	int soln[10][10]={0};
 	int m=4;
 	int n=4;
-
-
 	bool res=ratInMaze(maze,soln,0,0,m-1,n-1);
 	cout<<res;
-
-
-
-
-
 	return 0;
 }
