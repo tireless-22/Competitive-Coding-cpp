@@ -1,29 +1,57 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-int main(){
-	
-	int n=0,ans=0,num=0,i=0,mainSum=0;
-	cin>>n;
-	for (int k=0;k<n;k++){
-		cin>>num;
-		if(num<1){
-    		continue;
-		}
-  		int mainSum=0;
-  		i=2;
-	  	while(true){
-		    if(num==1){
-			    mainSum+=1;
-			    break;
+ 
+ //long substring with k unique characters
+
+int main (){
+	string str;
+	int k,i=0,uniqueSize=0,longSize=0,finalSize=0;
+	unordered_map<char,int> uoCounter;
+	cin>>str>>k;
+	while(i<str.size()){
+
+		if(uniqueSize<k){
+			uoCounter[str[i]]++;
+			if(uoCounter[str[i]]==1){
+				uniqueSize++;
+				longSize++;
 			}
-		    while(num%i!=0){
-		      	i+=1; 
-		    }
-			mainSum+=num;
-	    	num=num/i; 
-	  	}
-	ans+=mainSum; 	
+			else{
+				longSize++;
+			}
+			i++;
+			
+		}
+		
+		else if(uniqueSize==k){
+			
+			uoCounter[str[i]]++;
+			if(uoCounter[str[i]]==1){
+				uniqueSize++;
+				longSize++;
+			}
+			else{
+				longSize++;
+			}
+			i++;
+
+		}
+		else{
+			uoCounter[str[i-longSize]]--;
+			if(uoCounter[str[i-longSize]]==0){
+				uniqueSize--;
+				longSize--;
+
+			}
+			else{
+				longSize--;
+			}
+		}
+		if(longSize>finalSize){
+				finalSize=longSize;
+		}
+		
 	}
-cout<<ans;
+	cout<<finalSize<<"\n";
 	return 0;
 }
