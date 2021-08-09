@@ -35,8 +35,9 @@ int main(){
 		}
 
 		if(count==0){
-			
-			
+			if(i-j<smallestSubLen){
+				smallestSubLen=i-j;
+			}
 			if(uoCounter.find(str[j])==uoCounter.end()){
 				j++;
 			}
@@ -48,11 +49,7 @@ int main(){
 				j++;
 			}
 		}
-		if(count==0){
-			if(i-j<smallestSubLen){
-				smallestSubLen=i-j;
-			}
-		}
+		
 	}
 	cout<<smallestSubLen<<"\n";
 	return 0;

@@ -1,8 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-	cin.tie(0);
-	ios_base::sync_with_stdio(0);
 
 	int t;
 	cin>>t;
@@ -10,7 +8,7 @@ int main(){
 		int n;
 		cin>>n;
 		unsigned long long finalOP=0;
-		unordered_map<long long,long long> uoCounter;
+		unordered_map<int,int> uoCounter;
 		for(int i=0;i<n;i++){
 			int temp;
 			cin>>temp;

@@ -51,37 +51,54 @@ template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i
 
 int main() {
 #ifndef ONLINE_JUDGE
-	freopen("Error.txt", "w", stderr);
+    freopen("Error.txt", "w", stderr);
 #endif
 
 
-	int n=35;
-	
-    string s="TheQuickBrownFoxJumpsOverTheLazyDog";    
-    // debug(s);
-    bool flag=false;
-    vector <bool> v(26,false);
-   
-    for (char c:s){
-    	if(c>=97 and c<=122){
-    		v[c-97]=true;	
-    	}
-    	else if(c>=65 and c<=91){
-    		v[c-65]=true;	
-    	}
-    }
-    for (bool x:v){
-    	debug(x);
-    	if(x==0){
-    		flag=true;
-    	}
-    }
-    if (flag==true){
-    	cout<<"FALSE"<<"\n";
-    }
-    else{
-    	cout<<"TRUE"<<"\n";
-    }
+    int t;
+    cin>>t;
 
+    while(t--){
+        
+        int nRows,mCols;
+        cin>>nRows>>mCols;
+        vector<vector<int>>input(nRows,vector<int> (mCols,0));
+        for (int i=0;i<nRows;i++){
+            for(int j=0;j<mCols;j++){
+                int temp;
+                cin>>temp;
+
+                input[i][j]=temp;
+            }
+        }
+
+        debug(nRows);
+        debug(mCols);
+
+        int rowStart=0,colStart=0;
+
+        while(colStart<mCols){
+            for(int i=0;i<nRows;i++){
+
+                cout<<input[i][colStart]<<" ";
+                
+            }
+            
+
+            colStart++;
+            if(colStart<mCols){
+                for (int i=nRows-1;i>=0;i--){
+                    cout<<input[i][colStart]<<" ";
+                }
+                colStart++;
+            }
+        }
+        cout<<"\n";
+
+// 1 4 7 10 13 14 11 8 5 2 3 6 9 12 15 
+// 10 40 70 80 50 20 30 60 90 
+    }
     return 0;
+
 }
+

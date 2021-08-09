@@ -55,33 +55,14 @@ int main() {
 #endif
 
 
-	int n=35;
-	
-    string s="TheQuickBrownFoxJumpsOverTheLazyDog";    
-    // debug(s);
-    bool flag=false;
-    vector <bool> v(26,false);
-   
-    for (char c:s){
-    	if(c>=97 and c<=122){
-    		v[c-97]=true;	
-    	}
-    	else if(c>=65 and c<=91){
-    		v[c-65]=true;	
-    	}
-    }
-    for (bool x:v){
-    	debug(x);
-    	if(x==0){
-    		flag=true;
-    	}
-    }
-    if (flag==true){
-    	cout<<"FALSE"<<"\n";
-    }
-    else{
-    	cout<<"TRUE"<<"\n";
-    }
+	int t;
+	cin>>t;
+	while(t--){
+		 
+		
 
-    return 0;
+
+
+	}
+
 }
