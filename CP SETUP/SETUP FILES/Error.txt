@@ -1,5 +1,0 @@
-sum 750
-sum 350
-sum 550
-sum 325
-sum 441

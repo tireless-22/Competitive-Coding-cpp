@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 
 using namespace std;
+// valid paranthesis
 
 bool match(char c1, char c2){
 	return ((c1=='(' and c2==')') or (c1=='{' and c2=='}') or (c1=='[' and c2==']'));
