@@ -8,7 +8,7 @@ int main(){
 	n=rand()%15+1;
 	cout<<n<<endl;
 	for (int i=0;i<n;i++){
-		cout<<rand()%21-10<<" ";
+		cout<<rand()%9-4<<" ";
 	}
 
 
