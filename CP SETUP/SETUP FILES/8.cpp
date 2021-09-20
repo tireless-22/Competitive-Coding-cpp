@@ -4,9 +4,6 @@ using namespace std;
 
 
 
-
-
-
 #define fastio() ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
 #define MOD 1000000007
 #define MOD1 998244353
@@ -21,6 +18,7 @@ using namespace std;
 #define set_bits __builtin_popcountll
 #define sz(x) ((int)(x).size())
 #define all(x) (x).begin(), (x).end()
+#define FL(i,x,y) for(int i=x;i<y;i++)
 
 typedef long long ll;
 typedef unsigned long long ull;
@@ -56,51 +54,16 @@ int main() {
 #ifndef ONLINE_JUDGE
 	freopen("Error.txt", "w", stderr);
 #endif
-int n,k;
-	cin>>n>>k;
-	long long int sum=0;
-	priority_queue<int> p;
-
-	for (int i=0;i<n;i++){
-		int temp;
-		cin>>temp;
-		sum+=temp*temp;
-		p.push(temp);
-	}
-	debug(sum);
 
 
-
-	for (int i=0;i<k-n;i++){
-		int temp=p.top();
-		p.pop();
-		sum-=temp*temp;
-		debug(sum);
-
-		if(temp%2==0){
-			p.push(temp/2);
-			p.push(temp/2);
-			sum+=2*temp/2*temp/2;
-			debug(sum);
-
-		}
-		else{
-			p.push(temp/2);
-			p.push(temp/2+1);
-			sum+=temp/2*temp/2+(temp/2+1)*(temp/2+1);
-			debug(sum);
-
-		}
-		// debug(sum);
-
-
+	int t;
+	cin>>t;
+	while(t--){
+		 
 		
 
 
 
 	}
-	cout<<sum;
 
 }
-
-

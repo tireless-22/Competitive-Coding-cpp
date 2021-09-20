@@ -18,6 +18,7 @@ using namespace std;
 #define set_bits __builtin_popcountll
 #define sz(x) ((int)(x).size())
 #define all(x) (x).begin(), (x).end()
+#define FL(i,x,y) for(int i=x;i<y;i++)
 
 typedef long long ll;
 typedef unsigned long long ull;

@@ -18,6 +18,7 @@ using namespace std;
 #define set_bits __builtin_popcountll
 #define sz(x) ((int)(x).size())
 #define all(x) (x).begin(), (x).end()
+#define FL(i,x,y) for(int i=x;i<y;i++)
 
 typedef long long ll;
 typedef unsigned long long ull;
@@ -49,54 +50,22 @@ template <class T> void _print(set <T> v) {cerr << "[ "; for (T i : v) {_print(i
 template <class T> void _print(multiset <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
 template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i : v) {_print(i); cerr << " ";} cerr << "]";}
 
-
-// 3 sum
-// by using 2 pointer technique
-// we will keep one pointer as constant and 
-// we will move other two pointer according to the 2 pointer algorithm
-
-
 int main() {
 #ifndef ONLINE_JUDGE
 	freopen("Error.txt", "w", stderr);
 #endif
+	// int n;
+	// cin>>n;
+	// vector<int>v;
+	// for (int i=0;i<n;i++){
+	// 	int temp;
+	// 	cin>>temp;
+	// 	v.push_back(temp);
+	// }
 
-int n,temp,sum=0;
-cin>>n;
-vector<int>v;
-for (int i=0;i<n;i++){
-	cin>>temp;
-	v.push_back(temp);
-	
-}
-sort(v.begin(),v.end());
+	cout<<7^6;
 
-// n-2 is because we need 3 elements in the last case
-// which are n-3,n-2,n-1 indexes
-// index n is not possible 
 
-for(int i=0;i<n-2;i++){
-	int left,right;
-	left=i+1;
-	right=n-1;
-	while(left<right){
-		sum=v[i]+v[left]+v[right];
-		if (sum==0){
-			cout<<i<<" "<<left<<" "<<right<<endl;
-			cout<<v[i]<<" "<<v[left]<<" "<<v[right]<<endl;
 
-			left++;
-		}
-		else if(sum>0){
-			right--;
-		}
-		else{
-			left++;
-
-		}
-	}
-}
-
-return 0;
 
 }

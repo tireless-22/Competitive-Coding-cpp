@@ -18,6 +18,7 @@ using namespace std;
 #define set_bits __builtin_popcountll
 #define sz(x) ((int)(x).size())
 #define all(x) (x).begin(), (x).end()
+#define FL(i,x,y) for(int i=x;i<y;i++)
 
 typedef long long ll;
 typedef unsigned long long ull;
@@ -49,50 +50,20 @@ template <class T> void _print(set <T> v) {cerr << "[ "; for (T i : v) {_print(i
 template <class T> void _print(multiset <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
 template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i : v) {_print(i); cerr << " ";} cerr << "]";}
 
-bool myCmp(pair<int,int> a,pair<int,int> b){
-	return a.second<b.second;
-}
-
-
-
 int main() {
 #ifndef ONLINE_JUDGE
 	freopen("Error.txt", "w", stderr);
 #endif
-	// 01
-	// 10
-	int n;
-	int m;
-	vector<int> vx;
-	vector<int> vt;
-	vector<pair<int,int>>  vp;
 
-	for (int i=0;i<n;i++){
-		int temp;
-		cin>>temp;
-		vx.push_back(temp);
-	}
-	for (int i=0;i<n;i++){
-		int temp;
-		cin>>temp;
-		vt.push_back(temp);
+
+	int t;
+	cin>>t;
+	while(t--){
+		 
+		
+
+
+
 	}
 
-	for (int i=0;i<n;i++){
-		 vp.push_back( make_pair(vx[i],vt[i]) );
-	}
-	sort(vp.begin(),vp.end(),myCmp);
-
-
-// for (int i=0;i<n;i++){
-// 	debug(vp[i].first);
-// 	debug(vp[i].second);
-
-// 	}
-	
-
-
-
-
-return 0;
 }
