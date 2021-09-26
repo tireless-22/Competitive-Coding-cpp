@@ -12,7 +12,12 @@ int main(){
 	}
 
 
-
+// for i in range(int(input())):
+//     l,r = [int(i) for i in input().split()]
+//     if  l%3==0:
+//         print(r//3 - l//3 +1)
+//     else:
+//         print(r//3 - l//3)
 
 	
 
