@@ -52,28 +52,51 @@ template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i
 
 int main() {
 #ifndef ONLINE_JUDGE
-	freopen("Error.txt", "w", stderr);
+    freopen("Error.txt", "w", stderr);
 #endif
+    string s;
+    cin>>s;
+    int i=0;
+    int j=0;
+    int k=1;
+    int n=s.length()-1;
+    int count=0;
+    int final_ans=0;
+    
+    
+    while(k<=n){
+        
+        if(s[i]!=s[k]){
+            k++;
+        }
+        else{
+            debug(s[k])
+            debug(s[i])
+            
+            while(s[i]==s[k+j]){
+                i++;
+                j++;
+                count++;
+               
 
+                
+            }
+           
+            if(k+count-1==n and count>final_ans){
+                final_ans=count;
+                debug(final_ans)
+                
+            }
+            k++;
+            i=0;
+            j=0;
 
-	int t;
-	cin>>t;
-	while(t--){
-		int d,l,r;
-		cin>>d>>l>>r;
-		if(d<l){
-			cout<<"Too Early"<<endl;
-		 
-		}
-		else if (d<=r){
-			cout<<"Take second dose now"<<endl;
-
-		}
-		else{
-			cout<<"Too Late"<<endl;
-
-		}
-		
-		}
-
+            
+        }
+        
+    }
+    cout<<final_ans;
+  
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
 }

@@ -27,7 +27,7 @@ int minSteps(int  v[],int n){
 		minimum=minSteps(v,n-1)+1;
 	}
 
-	cout<<minimum<<"is the minimum for"<<n<<endl;
+	// cout<<minimum<<"is the minimum for"<<n<<endl;
 	
 	return v[n]=minimum;
 
@@ -36,7 +36,8 @@ int minSteps(int  v[],int n){
 int main(){
 
 	int v[100]={0};
-	int n=24;
+	int n;
+	cin>>n;
 	cout<<minSteps(v,n);
 	return 0; 
 }

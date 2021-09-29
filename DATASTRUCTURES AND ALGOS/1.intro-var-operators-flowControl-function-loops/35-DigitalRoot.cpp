@@ -20,7 +20,7 @@ int digitalRoot(int n)
 
 
 int main (){
-	cout<<digitalRoot(111);
+	cout<<digitalRoot(11199952);
 	
 	return 0;
 }

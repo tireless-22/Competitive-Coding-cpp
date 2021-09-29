@@ -59,9 +59,50 @@ int main() {
     int t;
     cin>>t;
     while(t--){
-         
-        
+        int n;
+        int k;
+        cin>>n>>k;
 
+        
+        if(k==n-1){
+            cout<<-1<<endl;
+        }
+
+        else{
+
+            if(n==k){
+                for (int i=1;i<=k;i++){
+                    cout<<i<<" ";
+                }
+                cout<<endl;
+            }
+
+            else if(k==0){
+                cout<<n<<" ";
+                for (int i=1;i<n;i++){
+                    cout<<i<<" ";
+                }
+                cout<<endl;
+
+            }
+
+            else{
+                cout<<n-k<<" ";
+
+                for(int i=1;i<=n-k-1;i++){
+                    cout<<i<<" ";
+
+
+                }
+                for (int i=n-k+1;i<=n;i++){
+                    cout<<i<<" ";
+                }
+                cout<<endl;
+
+            }
+            
+
+        }
 
 
     }
