@@ -8,7 +8,7 @@ int knapsack(int weights[],int values[],int totalKnapsackWeight,int n){
 		return 0;
 	}
 
-	if(totalKnapsackWeight-weights[n-1]<0){
+	if(totalKnapsackWeight<weights[n-1]){
 		return knapsack(weights,values,totalKnapsackWeight,n-1);
 	}
 
@@ -41,7 +41,7 @@ int main(){
 	int totalKnapsackWeight=7;
 	int n=4;
 	cout<<knapsack(weights,values,totalKnapsackWeight,n);
-
+	
 
 	return 0;
 }

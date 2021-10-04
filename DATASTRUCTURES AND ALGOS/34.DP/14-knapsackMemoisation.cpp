@@ -6,10 +6,10 @@ using namespace std;
 // no of values that are passed to the function
 int t[100][100];
 
-int knapsack(int weights[],int values[],int totalKnapsackWeight,int n){
+int knapsack(int weights[],int values[],int totalKnapsackWeight,int n,int t[100][100]){
 
 	if(totalKnapsackWeight==0 or n==0){
-		return 0;
+		return t[totalKnapsackWeight][n]=0;
 	}
 
 	// chacker to get the values that are precomputed already
@@ -20,7 +20,7 @@ int knapsack(int weights[],int values[],int totalKnapsackWeight,int n){
 	}
 
 	if(totalKnapsackWeight-weights[n-1]<0){
-		return t[totalKnapsackWeight][n]=knapsack(weights,values,totalKnapsackWeight,n-1);
+		return t[totalKnapsackWeight][n]=knapsack(weights,values,totalKnapsackWeight,n-1,t);
 				// saving the value of the 2d array
 	}
 
@@ -41,7 +41,7 @@ int knapsack(int weights[],int values[],int totalKnapsackWeight,int n){
 		// 	return profit1;
 		// }
 
-		return t[totalKnapsackWeight][n]=(max(knapsack(weights,values,totalKnapsackWeight-weights[n-1],n-1)+values[n-1],knapsack(weights,values,totalKnapsackWeight,n-1)));
+		return t[totalKnapsackWeight][n]=(max(knapsack(weights,values,totalKnapsackWeight-weights[n-1],n-1,t)+values[n-1],knapsack(weights,values,totalKnapsackWeight,n-1,t)));
 		// saving the value of the 2d array
 	}
 }
@@ -54,9 +54,12 @@ int main(){
 
 	int weights[]={1,3,3,5};
 	int values[]={3,4,5,7};
-	int totalKnapsackWeight=6;
+	int totalKnapsackWeight=7;
 	int n=4;
-	cout<<knapsack(weights,values,totalKnapsackWeight,n);
+
+	cout<<knapsack(weights,values,totalKnapsackWeight,n, t);
+	cout<<endl;
+
 
 
 	return 0;
