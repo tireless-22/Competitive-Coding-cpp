@@ -1,44 +1,76 @@
-
-
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
-void bubbleSort(int arr[], int n)
-{
-    int temp;
-    bool swapped;
-    //Run the steps n-1 times
-    for (int i = 0; i < n-1; i++)
-    {
-        swapped = false;
-        for (int j = 0; j <n-1-i ; j++)
-        {
-            if(arr[j]>arr[j+1]){
-            //Swap
-                temp = arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] = temp;
-                swapped = true;
-            }
-        } 
-        //If you did not swap for a particular value of i, it means array is sorted hence stop the program
-        if(!swapped){
-            return;
-        }
-    } 
+
+struct Node {
+    Node *next;
+    Node *prev;
+    int data;
+    Node(int x){
+        data=x;
+        next=NULL;
+        prev=NULL;
+    }
+};
+
+void preOrder(Node *head){
+    if(head==NULL){
+        return;
+    }
+    
+    cout<<head->data<<endl;
+    preOrder(head->prev);
+    preOrder(head->next);
 }
-int main()
-{
-    int size; //Size of the arry
-    cin>>size;
-    int arr[size] ;
-    for (int i = 0; i < size; i++)
-    {
-        cin>>arr[i];
+
+void inOrder(Node *head){
+    if(head==NULL){
+        return;
     }
-    bubbleSort(arr, size); //Function to sort the array
-    for (int i = 0; i < size; i++){
-        cout << arr[i] << " ";
-    }
+    inOrder(head->prev);
+    cout<<head->data<<endl;
+    
+    inOrder(head->next);
+}
+
+
+void postOrder(Node *head){
+    if(head==NULL){
+        return;
+    };
+    postOrder(head->prev);
+    postOrder(head->next);
+    cout<<head->data<<endl;
+}
+
+
+
+
+int main(){
+    Node *head=new Node(0);
+    Node *one=new Node(1);
+    Node *two=new Node(2);
+    Node *three=new Node(3);
+    Node *four=new Node(4);
+    Node *five=new Node(5);
+    Node *six=new Node(6);
+
+    head->prev=one;
+    head->next=two;
+
+    one->prev=three;
+    one->next=four;
+
+    two->prev=five;
+    two->next=six;
+
+    preOrder(head);
+    cout<<endl;
+    inOrder(head);
+    cout<<endl;
+    postOrder(head);
+
+
+
     return 0;
-} 
+}

@@ -8,7 +8,7 @@ int V;
 list<int> *l;
 
 public:
-
+ 
 	Graphs(int V){
 		this->V=V;
 		l=new list<int> [V];

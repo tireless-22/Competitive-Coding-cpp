@@ -64,6 +64,7 @@ int main (){
 	vector<int>a={5,4,3,4,3,543,63,6,3,67,34,6};
 	vector<int >b;
 	b=recurse(a);
+	cout<<"helllO";
 	// cout<<a.size();
 	for (int x:b){
 		cout<<x<<endl;
