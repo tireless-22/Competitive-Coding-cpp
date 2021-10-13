@@ -18,7 +18,6 @@ using namespace std;
 #define set_bits __builtin_popcountll
 #define sz(x) ((int)(x).size())
 #define all(x) (x).begin(), (x).end()
-#define FL(i,x,y) for(int i=x;i<y;i++)
 
 typedef long long ll;
 typedef unsigned long long ull;
@@ -59,33 +58,11 @@ int main() {
    int t;
    cin>>t;
    while(t--){
-      int n;
-      cin>>n;
-      int count=0;
-      while(n!=0){
-         if(n%2==0){
-            
-            count++;
-            while(n%2==0){
-               n/=2;
-            }
+       
+      
 
 
-         }
-         else{
-            n--;
-            count++;
-         }
-      }
-
-      if(count%2==0){
-         cout<<"Bob"<<endl;
-      }
-      else{
-         cout<<"Alice"<<endl;
-      }
 
    }
-      
 
 }

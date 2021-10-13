@@ -1,35 +1,43 @@
-#include <iostream>
-#include <string>
+#include<bits/stdc++.h>
 using namespace std;
 
-int main()
-{
-    string s1;
-    string s2;
+int main(){
+    int temp=12*24;
+    int ce=0,co=0;
+    
 
-    cin >> s1 >> s2;
+    
+   while(temp%2==0){
+            ce++;
+            temp=temp/2;
 
-    for (int i = 0; i < s1.length(); i++)
-    {
-        s1[i] = tolower(s1[i]);
-        s2[i] = tolower(s2[i]);
-
-        if (s1[i] != s2[i])
-        {
-            if (s1[i] > s2[i])
-            {
-                cout << 1 << endl;
-                return 0;
-            }
-            else
-            {
-                cout << -1 << endl;
-                return 0;
-            }
-            return 0;
         }
+
+    while(temp%3==0){
+        co++;
+        temp=temp/3;
     }
 
-    cout << 0 << endl;
+    int i=-1;
+    while(temp>1 and i*i<=temp){
+        i+=6;
+        while(temp%i==0){
+            co++;
+            temp=temp/i;
+        }
+        while(temp%(i+2)==0){
+            co++;
+            temp=temp/i;
+        }
+        
+    }
+        
+    cout<<ce<<" "<<co<<endl;
+
+       
+
+
+
+
     return 0;
 }
