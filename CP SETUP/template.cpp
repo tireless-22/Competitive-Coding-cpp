@@ -51,18 +51,20 @@ template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i
 
 int main() {
 #ifndef ONLINE_JUDGE
-	freopen("Error.txt", "w", stderr);
+    freopen("Error.txt", "w", stderr);
 #endif
 
 
-	int t;
-	cin>>t;
-	while(t--){
-		 
-		
+    int t;
+    cin>>t;
+    while(t--){
+         
+        
 
 
 
-	}
+    }
+
+    return 0;
 
 }

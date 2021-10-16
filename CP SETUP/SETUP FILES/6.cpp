@@ -55,14 +55,6 @@ int main() {
 #endif
 
 
-    int t;
-    cin>>t;
-    while(t--){
-         
-        
-
-
-
-    }
+   
 
 }

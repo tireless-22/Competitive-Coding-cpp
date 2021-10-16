@@ -7,9 +7,6 @@ int mini(vector<int> v,int n){
 		return 0;
 	}
 
-	// if(n==1){
-	// 	return min({v[0],v[1]});
-	// }
 
 	int firstMin=mini(v,n-1)+v[n-1];
 	int secondMin=mini(v,n-2)+v[n-2];
