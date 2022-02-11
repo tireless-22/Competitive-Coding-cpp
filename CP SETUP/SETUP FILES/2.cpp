@@ -1,90 +1,66 @@
 #include<bits/stdc++.h>
-
 using namespace std;
 
+// 1 and 2 airlines
+// 3 travel and entertainment
+// 4 and 5 banking and financial services
+// 6 merchandising and banking 
+// 7 petroleum
+// 8 health care, telecommunications
+// 9 national assignment
 
 
-#define fastio() ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
-#define MOD 1000000007
-#define MOD1 998244353
-#define INF 1e18
-#define nline "\n"
-#define pb push_back
-#define ppb pop_back
-#define mp make_pair
-#define ff first
-#define ss second
-#define PI 3.141592653589793238462
-#define set_bits __builtin_popcountll
-#define sz(x) ((int)(x).size())
-#define all(x) (x).begin(), (x).end()
+// bool check1(){
 
-typedef long long ll;
-typedef unsigned long long ull;
-typedef long double lld;
-// typedef tree<pair<int, int>, null_type, less<pair<int, int>>, rb_tree_tag, tree_order_statistics_node_update > pbds; // find_by_order, order_of_key
-
-#ifndef ONLINE_JUDGE
-#define debug(x) cerr << #x <<" "; _print(x); cerr << endl;
-#else
-#define debug(x)
-#endif
-
-void _print(ll t) {cerr << t;}
-void _print(int t) {cerr << t;}
-void _print(string t) {cerr << t;}
-void _print(char t) {cerr << t;}
-void _print(lld t) {cerr << t;}
-void _print(double t) {cerr << t;}
-void _print(ull t) {cerr << t;}
-
-template <class T, class V> void _print(pair <T, V> p);
-template <class T> void _print(vector <T> v);
-template <class T> void _print(set <T> v);
-template <class T, class V> void _print(map <T, V> v);
-template <class T> void _print(multiset <T> v);
-template <class T, class V> void _print(pair <T, V> p) {cerr << "{"; _print(p.ff); cerr << ","; _print(p.ss); cerr << "}";}
-template <class T> void _print(vector <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
-template <class T> void _print(set <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
-template <class T> void _print(multiset <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
-template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i : v) {_print(i); cerr << " ";} cerr << "]";}
-
-int main() {
-#ifndef ONLINE_JUDGE
-    freopen("Error.txt", "w", stderr);
-#endif
-
-    int n;
-    cin>>n;
-
-    int num;
-    num=0;
-
-    for(int i=0;i<n;i++){
-        int temp;
-        cin>>temp;
-        num=num*2+temp;
-
-    }
+//     return true;
 
 
 
-    while(num>9){
+// }
 
-        int temp=num;
-        int sum=0;
-        while(temp!=0){
 
-            sum+=temp%10;
-            temp=temp/10;
+// bool check2(){
+
+//     retrun true;
+
+// }
+
+
+// bool check3(){
+//     return true;
+
+
+// }
+
+int main(){
+    string s="5241 6701 2345 6789";
+    vector<int> v;
+
+
+    for(int i=0;i<s.length();i++){
+        if(s[i]=' '){
+            int x=stoi(s[i]);
+            v.push_back(x);
 
         }
-        num=sum;
-
     }
 
-    cout<<num<<endl;
+    for(int x:v){
+        cout<<x<<endl;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     return 0;
-
 }

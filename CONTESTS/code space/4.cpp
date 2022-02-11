@@ -64,19 +64,10 @@ double prob(int x, int y,int size,int moves){
     pR=prob(x+1,y,size,moves-1)*1/4;
     pD=prob(x,y+1,size,moves-1)*1/4;
     pU=prob(x,y-1,size,moves-1)*1/4;
-    debug(pL)
-    debug(pR)
-    debug(pD)
-    debug(pU)
-  
 
     return pL+pR+pD+pU;
 
 }
-
-
-
-
 
 int main() {
 #ifndef ONLINE_JUDGE
@@ -89,26 +80,10 @@ int main() {
     cin>>x>>y;
     int moves;
     cin>>moves;
-
-
    
     double ans=prob(x,y,size,moves);
 
-    if(ans==1){
-        cout<<"1.0";
-    }
-    else if(ans==0){
-        cout<<"0.0";
-    }
-    else{
-        cout<<ans;
-    }
-   
-   
-
-   
-
-
+    cout<<ans;
+    
     return 0;
-
 }

@@ -49,52 +49,59 @@ template <class T> void _print(set <T> v) {cerr << "[ "; for (T i : v) {_print(i
 template <class T> void _print(multiset <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
 template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i : v) {_print(i); cerr << " ";} cerr << "]";}
 
-int main() {
-#ifndef ONLINE_JUDGE
+int main(){
+	#ifndef ONLINE_JUDGE
     freopen("Error.txt", "w", stderr);
-#endif
+	#endif
+	int t;
+	cin>>t;
+	while(t--){
+		int n;
+		cin>>n;
+		vector<int>v ;
+		for(int i=0;i<n;i++){
+			int temp;
+			cin>>temp;
+			v.push_back(temp);
+		}
 
+		int max=INT_MIN,min=INT_MAX;
+		for(int x:v){
+			if(x<min){
+				min=x;
+			}
+			if(x>max){
+				max=x;
+			}
+		}
 
-    string s;
-    cin>>s;
-    string os;
-    vector<bool> check(26,true);
-    for (char c:s){
+		double avg=double(min+max)/2;
+		debug(avg)
 
-    	if(c-48<10){
-    		if(check[c-48]){
+		double diff=abs(v[0]-avg);
+		int temp=v[0];
 
-    			os+=('z'-(c-48));
+		for(int x:v){
+			if(abs(x-avg)<diff){
+				diff=abs(x-avg);
+				temp=x;
+			}
+		}
+		cout<<temp<<endl;
+		// cout<<(max-temp)*(temp-min)<<endl;
+	}
 
-    			check[c-48]=false;
-
-    		}
-    	}
-
-
-
-    	else{
-    		if(check[c-'a']){
-
-    			if(c-'a'<13){
-    			os+=('z'-(c-'a'));
-
-    			}
-	    		else{
-
-	    			os+='a'+('z'-c);
-
-	    		}
-
-	    		check[c-'a']=false;
-    		}
-    	}
-
-    }
-    cout<<os<<endl;
-
-
-
-    return 0;
+	return 0;
 
 }
+
+
+
+
+
+
+
+
+
+
+

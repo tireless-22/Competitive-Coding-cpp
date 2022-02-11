@@ -9,7 +9,9 @@ int main(){
 	
 	while(t--){
 		int n=rand()% 20+1;
-		cout<<n<<endl;
+		cout<<n<<" ";
+		int m=rand()% 20+1;
+		cout<<m<<endl;
 		for (int i=0;i<n;i++){
 			cout<<(rand()%5+1)<<" ";
 		}
