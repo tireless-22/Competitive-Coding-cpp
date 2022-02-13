@@ -1,7 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-
 void recurse(vector<int> nums,vector<int> ds){
 	if(ds.size()==nums.size()){
 		for( auto i:ds){
@@ -15,16 +14,9 @@ void recurse(vector<int> nums,vector<int> ds){
 		ds.push_back(x);
 		recurse(nums,ds);
 		ds.pop_back();
-
 	}
-
 	return;
-
-
-
-
 }
-
 
 
 int main(){
@@ -32,10 +24,6 @@ int main(){
 	vector<int> ds;
 
 	recurse(nums,ds);
-	
-
-
-
 
 	return 0;
 
