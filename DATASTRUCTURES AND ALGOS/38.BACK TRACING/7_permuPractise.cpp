@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+
 void permuPractise(vector<int> nums,vector<int> ds,vector<int> freq){
 	// frequency calculator is to not allow any repetitions
 	if(ds.size()==nums.size()){
@@ -21,12 +22,9 @@ void permuPractise(vector<int> nums,vector<int> ds,vector<int> freq){
 			ds.pop_back();
 
 		}
-		
-
 	}
 	return;
 }
-
 
 
 int main(){
@@ -35,8 +33,6 @@ int main(){
 	vector<int> freq (vector<int> (nums.size(),0));
 
 	permuPractise(nums,ds,freq);
-
-
 
 	return 0;
 

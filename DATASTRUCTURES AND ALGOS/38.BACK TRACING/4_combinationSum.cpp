@@ -9,9 +9,10 @@ void recurse(vector<int> a ,int sum,int n,vector<int> ds){
         }
         cout<<endl;
         return;
-    }
-    if(n==0){
+    
+        if(n==0){
         return;
+    }
     }
 
     if(a[n-1]<=sum){
@@ -30,7 +31,6 @@ int main(){
     int sum=9;
     vector<int> ds;
     recurse(a,sum,a.size(),ds);
-
 
     return 0;
 }

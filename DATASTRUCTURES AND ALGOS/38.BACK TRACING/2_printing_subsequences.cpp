@@ -11,7 +11,6 @@ void printF(int ind,vector<int> &ds,vector<int> arr,int n){
 		cout<<endl;
 		return ;
 	}
-
 	printF(ind+1,ds,arr,n);
 
 	ds.push_back(arr[ind]);
@@ -19,13 +18,6 @@ void printF(int ind,vector<int> &ds,vector<int> arr,int n){
 	printF(ind+1,ds,arr,n);
 
 	ds.pop_back();
-	
-
-	
-
-
-
-
 
 }
 

@@ -22,13 +22,11 @@ int knapsack(int weights[],int values[],int totalKnapsackWeight,int n){
 		cout<<"n   "<<n<<"  "<<"totalKnapsackWeight    "<<totalKnapsackWeight<<endl;
 		cout<<"presentWeight    "<<weights[n-1]<<"   "<<"presentvalues   "<<values[n-1]<<endl;
 
-
 		int profit1=knapsack(weights,values,totalKnapsackWeight-weights[n-1],n-1)+values[n-1];
 
 		// by excluding the present thing
 		cout<<"n   "<<n<<"  "<<"totalKnapsackWeight    "<<totalKnapsackWeight<<endl;
 		cout<<"presentWeight    "<<weights[n-1]<<"   "<<"presentvalues   "<<values[n-1]<<endl;
-
 
 		int profit2=knapsack(weights,values,totalKnapsackWeight,n-1);
 

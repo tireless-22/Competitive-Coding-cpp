@@ -25,7 +25,7 @@ int minSteps(int  v[],int n){
 	}
 	else{
 		minimum=minSteps(v,n-1)+1;
-	}
+	} 
 
 	// cout<<minimum<<"is the minimum for"<<n<<endl;
 	
