@@ -20,7 +20,7 @@ void recurse(vector<int> nums,vector<int> ds){
 
 
 int main(){
-	vector<int> nums={1,2,3};
+	vector<int> nums={1,2,3,4};
 	vector<int> ds;
 
 	recurse(nums,ds);

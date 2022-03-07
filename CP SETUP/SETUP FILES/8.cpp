@@ -1,34 +1,49 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
-#define ll long long int 
-int main()
-{
-    int t, n;
-    cin >> t;
-    while (t--)
-    {
-        cin >> n;
-        string S;
-        cin >> S;
-        map<ll , ll>a;
-        map<ll , ll>b;
-        for (int i = 0; i < n; i++)
-        {
-            a[i - (S[i] - 48)]++;
-            b[i + (S[i] - 48)]++;
-        }
-        ll answer = 0;
-        for(auto i = a.begin(); i != a.end(); i++)
-        {
-            
-            answer += ((i -> second) * ( i -> second - 1))/2; 
-        }
-        for(auto i = b.begin(); i != b.end(); i++)
-        {
+int main(){
+    int t;
+    cin>>t;
+    int ans=0;
+    
+    for(int i=0;i<t;i++){
+        int x,a,b;
+        cin>>x>>a>>b;
+       
 
-            answer += ((i -> second) * ( i -> second - 1))/2; 
+        bool check=false;
+
+        int maxx;
+        int minn;
+
+        if(a>=b){
+            maxx=a;
+            minn=b;
         }
-        cout << answer << endl;
+        else{
+            maxx=b;
+            minn=a;
+        }
+
+        int minnn=minn;
+        int r1=x%maxx;
+        int r2=x%minn;
+
+        while(minn<maxx){
+         if(r1%(maxx-minn)==0 or r2%(maxx-minn)==0){
+             check=true;
+
+             break;
+         }
+         minn+=minnn;
+        }
+        ans=(ans+check*(int)(pow(2, i+1) + 0.5))%1000000007;
+
+        
     }
+    
+    cout<<ans;
+
+
+    return 0;
 }

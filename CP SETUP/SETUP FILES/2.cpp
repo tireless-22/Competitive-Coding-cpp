@@ -1,66 +1,44 @@
 #include<bits/stdc++.h>
 using namespace std;
-
-// 1 and 2 airlines
-// 3 travel and entertainment
-// 4 and 5 banking and financial services
-// 6 merchandising and banking 
-// 7 petroleum
-// 8 health care, telecommunications
-// 9 national assignment
-
-
-// bool check1(){
-
-//     return true;
-
-
-
-// }
-
-
-// bool check2(){
-
-//     retrun true;
-
-// }
-
-
-// bool check3(){
-//     return true;
-
-
-// }
-
 int main(){
-    string s="5241 6701 2345 6789";
+    int n;
+    cin>>n;
+    int a;
+    int b;
+    cin>>a>>b;
     vector<int> v;
 
+    for(int i=0;i<n;i++){
+        int temp;
+        cin>>temp;
+        v.push_back(temp);
+    }
 
-    for(int i=0;i<s.length();i++){
-        if(s[i]=' '){
-            int x=stoi(s[i]);
-            v.push_back(x);
+    for( int x:v){
+        cout<<x<<" ";
+    }
+    cout<<endl;
+    cout<<a<<"  "<<b<<endl;
 
+    int maxx=INT_MAX;
+   
+
+    for(int c=0;c<=n-c;c++){
+        for(int d=a+c;d<=c+b and d<n and d!=c;d++){
+            cout<<c<<" "<<d<<endl;
+
+            if((v[c]+v[d])<maxx){
+                maxx=v[c]+v[d];
+            }
         }
     }
 
-    for(int x:v){
-        cout<<x<<endl;
-    }
+    cout<<maxx;
 
 
 
 
 
-
-
-
-
-
-
-
-
-
+    
     return 0;
 }

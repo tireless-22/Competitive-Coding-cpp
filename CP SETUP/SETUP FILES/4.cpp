@@ -1,43 +1,35 @@
-#
 #include<bits/stdc++.h>
 using namespace std;
-
-
-void combinations(int target,int index,vector<int> v, int &n){
-    if(target==0){
-        cout<<"hello"<<endl;
-        n++;
-        return ;
-
+int main(){
+    int n;
+    int m;
+    cin>>n>>m;
+    vector<vector<int>> v(n,vector<int>(n,0));
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            int temp;
+            cin>>temp;
+            v[i][j]=temp;
+        }
     }
-    cout<<index<<endl;
+    priority_queue<int ,vector<int>,greater<int>> s;
+    priority_queue<int> pq;
 
-    if(index=v.size()){
-        return ;
+    for(int i=0;i<m;i++){
+        int maxx=-1;
+        int secondMax=-1;
+        for(int j=0;j<n;j++){
+            if(v[j][i]>maxx){
+                secondMax = maxx;
+                maxx  = v[j][i];
+            }
+            else if(v[j][i] > secondMax){
+                secondMax = v[j][i];
+            }
+            s.push(maxx);
+            pq.push(secondMax);
+        }
     }
-
-    if(v[index]<=target){
-        combinations(target-v[index],index+1,v,n);
-
-    }
-    combinations(target,index+1,v,n);
-}
-
-
-
-int main() {
-    // no of combination of values of sum that we can we can make using the elemenents
-    // as we are talking about combinations repetitions are also alowed
-
-
-    vector<int> v={2,3,4,3};
-    int target=6;
-    int n=0;
-    int index=0;
-    cout<<n<<endl;
-
-    combinations(target,index,v,n);
-    cout<<n<<endl;
-
+    cout<<min(s.top(),pq.top());
     return 0;
 }

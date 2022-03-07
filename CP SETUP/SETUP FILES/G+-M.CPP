@@ -5,15 +5,15 @@ int main(){
 	srand(time(NULL));
 
 
-	int t=rand()%1000+1;
+	int t=rand()%10+1;
 	cout<<t<<endl;
 	while(t--){
-		int n=rand()% 1000+1;
+		int n=rand()% 10+1;
 	
 		cout<<n<<endl;
 	
 		for (int i=0;i<n;i++){
-			cout<<(rand()%1000+10000)<<" ";
+			cout<<(rand()%10+1)<<" ";
 		}
 		cout<<endl;
 	}
