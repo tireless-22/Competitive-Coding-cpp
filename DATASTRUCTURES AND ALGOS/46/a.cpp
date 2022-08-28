@@ -2,81 +2,47 @@
 using namespace std;
 
 int main(){
-    int t;
-    cin>>t;
-    int ans=0;
-    
-    for(int i=0;i<t;i++){
-        int x,a,b;
-        cin>>x>>a>>b;
-       
-
-        bool check=false;
-
-        int maxx;
-        int minn;
-
-        if(a>=b){
-            maxx=a;
-            minn=b;
-        }
-        else{
-            maxx=b;
-            minn=a;
-        }
-       
-        
-        if(x==0){
-            check=true;
-        }
-
-        else if(a==0 and b==0){
-            check=false;
-        }
-        
-        else if(a==0){
-            if(x%b==0){
-                check=true;
-            }
-            else{
-                check=false;
-            }
-        
-        }
-        else if(b==0){
-            if(x%a==0){
-                check=true;
-
-            }
-            else{
-                check=false;
-            }
-        }
-        
-        else{
-             int minnn=minn;
-            int r1=x%maxx;
-            int r2=x%minn;
-            while(minn<maxx){
-                if(r1%(maxx-minn)==0 or r2%(maxx-minn)==0){
-                    check=true;
-
-                    break;
-                }
-             minn+=minnn;
-            }
-            
-        }
-
-        
-        ans=(ans+check*(int)(pow(2, i+1) + 0.5))%1000000007;
-
-        
+    int n;
+    cin>>n;
+    int target;
+    cin>>target;
+    target=2*target;
+    string direction;
+    cin>>direction;
+    vector<int> a;
+    for(int i=0;i<n;i++){
+        int temp;
+        cin>>temp;
+        a.push_back(temp+target);
+        a.push_back(target-temp);
     }
-    
-    cout<<ans;
-
-
+    int size=a.size();
+    vector<vector<int>> v(size+1,vector<int>(target+target+1,-1));
+    bool checker=false;
+    for(int i=0;i<=size;i++){
+        for (int j=0;j<=target;j++){
+            if(i==0 or j==0){
+                v[i][j]=0;
+                if(v[i][j]==target)
+                    checker=true;
+            }
+            else if(j>=a[i-1]){
+                v[i][j]=max({v[i-1][j],v[i-1][j-a[i-1]]+a[i-1]});
+                if(v[i][j]==target)
+                    checker=true;
+            }
+            else{
+                v[i][j]=v[i-1][j];
+                if(v[i][j]==target)
+                    checker=true;
+            }
+        }
+    }
+    if(checker){
+        cout<<"Possible";
+    }
+    else{
+        cout<<"Not Possible";
+    }
     return 0;
-    
 }

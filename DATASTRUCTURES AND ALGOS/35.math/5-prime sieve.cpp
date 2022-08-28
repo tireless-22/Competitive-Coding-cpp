@@ -6,7 +6,7 @@ using namespace std;
 
 
 int main(){
-	int N=1e6;
+	int N=1e4;
 	cout<<N;
 	vector<int> v(N,0);
 	for(int i=2;i*i<=N;i++){

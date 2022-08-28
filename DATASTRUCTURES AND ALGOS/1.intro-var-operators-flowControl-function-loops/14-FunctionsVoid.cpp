@@ -1,11 +1,23 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void samp(){
-	cout<<"this is sample line";
+int meghna(int a,float b){
+
+	return a+b;
 }
 
-int main (){
-	samp();
+
+
+int main(){
+	cout<<meghna(2,3.5);
+
 	return 0;
 }
+
+
+
+
+
+
+
+

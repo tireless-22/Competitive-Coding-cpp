@@ -12,8 +12,7 @@ void recursePermute(vector<int> &ds,vector<int> &nums,int freq[]){
 			}		
 			else{
 				check=false;
-				break;https://www.codingninjas.com/codestudio/problems/frog-jump_3621012?source=youtube&campaign=striver_dp_videos&utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_dp_videos&leftPanelTab=0
-			}
+				break;			}
 		}
 		if(check){
 			cnt++;

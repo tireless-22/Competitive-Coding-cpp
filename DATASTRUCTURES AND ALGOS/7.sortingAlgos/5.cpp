@@ -53,7 +53,7 @@ void mergeSort(int arr[],int l,int r){
 
 
 int main(){
-	int arr[]={10,5,30,15,7};
+	int arr[]={10,55,30,15,7};
 	int l=0;
 	int r=sizeof(arr)/sizeof(arr[0]);
 	mergeSort(arr,l,r-1);

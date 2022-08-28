@@ -4,8 +4,9 @@ using namespace std;
 
 
 int main(){
-    int x=34;
-    cout<<(x++).size();
+    string s;
+    getline(cin,s);
+    cout<<s;
     
 
 }

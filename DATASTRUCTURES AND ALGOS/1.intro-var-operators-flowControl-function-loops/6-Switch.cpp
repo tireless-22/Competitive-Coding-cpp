@@ -12,13 +12,15 @@ switch(ip){
 		break;
 	case 2:
 		cout<<"this is for two";
-		break;
+		
 	case 3:
 		cout<<"this is for three";
 		break;
 	case 4:
 		cout<<"this is for four";
-		break;				
+		break;			
+
+
 
 }
 

@@ -1,25 +1,37 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// spiral n logn time complexity
-
 int main(){
-	int arr []={52,46,345234,234,534};
-	int len=sizeof(arr)/sizeof(arr[0]);
+    int a,b,c,d;
+    cin>>a>>b>>c>>d;
+    int time=0;
 
-	sort (arr,arr+len);
 
-	for (int i=0;i<len;i+=2){
+    if(c>a){
+        time+=(c-a)*60;
+    }
+    else{
+        // a<c
+        time+=(24+c-a)*60;
+    }
 
-		int temp=arr[i+1];
-		arr[i+1]=arr[i];
-		arr[i]=temp;
-		// cout<<arr[i]<<endl;
+    if(d>b){
+            time+=(d-b);
+    }
+    else{
+            time+=(-60+d-b);
 
-	}
+    }
 
-	for (int i=0;i<len;i++){
-		cout<<arr[i]<<endl;
-	}
-	return 0;
+    cout<<time<<endl;
+
+
+
+
+
+
+
+
+    return 0;
+
 }

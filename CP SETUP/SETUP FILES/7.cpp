@@ -2,55 +2,43 @@
 using namespace std;
 
 int main(){
-	int t;
-	cin>>t;
-	int ans=0;
-	while(t--){
+	int a[]={2,3,7,8,10};
+	int size=sizeof(a)/sizeof(a[0]);
+	int target=12;
+	vector<vector<int>> v(size+1,vector<int>(target+1,-1));
+	bool checker=false;
 
-
-		int a;
-		int b;
-		int x;
-		cin>>x>>a>>b;
-		bool check=false;
-
-		int maxx;
-		int minn;
-
-		if(a>=b){
-			maxx=a;
-			minn=b;
+	for(int i=0;i<=size;i++){
+		for (int j=0;j<=target;j++){
+			if(i==0 or j==0){
+				v[i][j]=0;
+				cout<<v[i][j]<<"  ";
+				if(v[i][j]==target)
+					checker=true;
+			}
+			else if(j>=a[i-1]){
+				v[i][j]=max({v[i-1][j],v[i-1][j-a[i-1]]+a[i-1]});
+				cout<<v[i][j]<<"  ";
+				if(v[i][j]==target)
+					checker=true;
+			}
+			else{
+				v[i][j]=v[i-1][j];
+				cout<<v[i][j]<<"  ";
+				if(v[i][j]==target)
+					checker=true;
+			}
 		}
-		else{
-			maxx=b;
-			minn=a;
-		}
-
-		int minn=min;
-		int r1=x%max;
-		int r2=x%min;
-		
-
-		// while(min<max){
-		// 	if(r1%(max-min)==0 or r2%(max-min)==0){
-		// 		check=true;
-
-		// 		break;
-		// 	}
-		// 	min+=minn;
-		// }
-
-		
-		cout<<check<<endl;
-
+		cout<<endl;
+	}
+	cout<<v[size][target];
+	if(checker){
+		cout<<"yes";
 
 	}
-
-
-	
-
-	
-
+	else{
+		cout<<"no";
+	}
 
 
 	return 0;

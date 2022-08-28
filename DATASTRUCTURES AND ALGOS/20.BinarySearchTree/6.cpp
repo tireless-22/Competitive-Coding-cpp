@@ -12,12 +12,20 @@ struct Node {
 	}
 };
 
-void inOrder(Node *head){
-	if(head!=NULL){
+void inOrder(Node *head,int b){
 
-		inOrder(head->left);
+
+	
+	if(head!=NULL){
+		
+
+		inOrder(head->left,b);
+		b--;
+		if(b==0){
+			return head->data;
+		}
 		cout<<head->data<<endl;
-		inOrder(head->right);
+		inOrder(head->right,b--);
 	}
 }
 
@@ -63,6 +71,7 @@ int main(){
 	root ->right->left=new Node(60);
 	root ->right->right=new Node(90);
 	cout<<floorr(root,119);
+	inOrder(root,3);
 
 
 
